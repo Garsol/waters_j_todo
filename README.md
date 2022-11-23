@@ -4,7 +4,7 @@ This is a project in which I make a to do list that can be checked off.
 
 ## Usage
 
-TODO: Write usage instructions
+To check anything ad in progress or done check the checkbox
 
 ## Contributing
 

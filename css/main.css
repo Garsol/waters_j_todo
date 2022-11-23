@@ -11,14 +11,23 @@
 
 body { 
     font-size: 16px;
-    background-color: black;
+    background-image: url(/images/tri.jpg);
 
     font-family: Arial, Helvetica, sans-serif;
 
     color: white;
 }
 
-header > h1 { text-align: center; padding: 8px; }
+header > h1 { 
+    text-align: center;
+     padding: 20px; 
+     
+    }
+
+    h1:hover {
+        scale: 1.2;
+        transition: 0.3s;
+    }
 
 article { 
     width: 25%; 
@@ -45,10 +54,56 @@ article:first-of-type { border: 4px solid gray; }
 
 ul { list-style-type: none; }
 
+li {
+    font-size: 18px;
+}
+
+
+input[type="checkbox"] {
+    float: right;
+  }
+
+  li:checked{
+    background-color: red;
+  }
+
+ .inprogress input[type="checkbox"]:checked + span {
+    background-color: red;
+    border: 3px solid red;
+    animation: fadein 0.5s;
+  }
+
+  .inprogress input[type="checkbox"]:checked + span::after {
+    content: '\2713';
+    float: right;
+    margin-right: 30px;
+  }
+
+  .done input[type="checkbox"]:checked + span {
+    background-color: rgb(21, 255, 0);
+    border: 3px solid rgb(21, 255, 0);
+    animation: fadein 0.5s;
+    color: black;
+  }
+
+  .done input[type="checkbox"]:checked + span::after {
+    content: '\2713';
+    float: right;
+    margin-right: 30px;
+    color: white;
+  }
 ul li { padding: 6px 8px; text-transform: uppercase; }
 
 .todo li:nth-child(odd) { background-color: rgba(255, 255, 255, 0.2)}
 
 .inprogress li:nth-child(odd) { background-color: rgba(255, 0, 0, 0.5)}
 
-.done li:nth-child(odd) { background-color: rgba(0, 255, 0, 0.5)}
+.inprogress input:checked { background-color: red}
+
+.done li:nth-child(odd) { background-color: rgba(0, 107, 0, 0.5)}
+
+/*adding an animation*/
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
